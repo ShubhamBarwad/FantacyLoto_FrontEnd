@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+#   FANTACY LOTO
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## project-documentation
 
-## Available Scripts
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=100px height=100px src="src/resources/logo.png" alt="Project logo"></a>
+</p>
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h3 align="center">FANCTACY LOTO</h3>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
+<div align="center">
 
-### `npm test`
+  [![Status](https://img.shields.io/badge/status-active-success.svg)]()
+  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
+  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</div>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📝 Table of Contents
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Deployment](#deployment)
+- [Project View](#projectView)
+- [Features](features)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgement)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🧐 About <a name = "about"></a>
+A website for a fictitious online gaming website, with additional perks of winning real money with your skills.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🏁 Getting Started <a name = "getting_started"></a>
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
-### `npm run eject`
+### Prerequisites
+Things you need to install.
+- VS Code
+- Eclipse IDE
+- Java Enterprise Edititon
+- Nodejs
+- Reactjs
+- SQL
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installing
+You need to clone two repositories for this web application to work.
+- FantacyLoto_FrontEnd: https://github.com/ShubhamBarwad/FantacyLoto_FrontEnd.git
+- FantacyLoto-Services: https://github.com/ShubhamBarwad/FantacyLoto-Services.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+FrontEnd Installation:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+After successfully cloning the two repositories. Open the Appetite_FrontEnd with VS Code. Open the terminal in the VS Code using 'CTRL'+ ` . In the terminal install the dependencies using the following commands
 
-## Learn More
+```
+npm install next-auth
+npm install react-redux
+npm install axios
+npm i react-router
+npm i react-router-dom
+npm install formik --save
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Once thats done, you can run the frontend of the web-application by using the following command
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npm run dev
+```
 
-### Code Splitting
+BackEnd Installation:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Open the backend project in EclipseIDE. Verify and match the SQL server port number with the one installed in your system. Then create a database in the SQL using following command.
+```
+CREATE DATABASE loginservice;
+```
+Then individually run these commands in the SQL console
+```
+INSERT INTO users (id, username, PASSWORD)
+VALUES (1,"shubham", "abc12345");
 
-### Analyzing the Bundle Size
+INSERT INTO users (id, username, PASSWORD)
+VALUES (2,"suyash", "xyz12345");
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+INSERT INTO users (id, username, PASSWORD)
+VALUES (3,"vikrant", "qpr12345");
 
-### Making a Progressive Web App
+INSERT INTO users (id, username, PASSWORD)
+VALUES (4,"akshay", "abc56789");
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Then run the program as Java Application on server port 8080 (It will automatically run on this port number). Once both the servers are up and running, open the following link in Chrome:
+```
+http://localhost:3000/
+```
+You should see a login page if you are running it for the first time.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🎈 Project View <a name="projectView"></a>
+### Login Page
+<img src="src/resources/LoginPage.png" alt= “” width="1000">
 
-### Deployment
+### Placeholder Repositioning
+<img src="src/resources/PlaceholderReposition.png" alt= “” width="1000">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Client Side Validation
+<img src="src/resources/ErrorResponse.png" alt= “” width="1000">
 
-### `npm run build` fails to minify
+### Dashboard
+<img src="src/resources/Dashboard.png" alt= “” width="1000">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🚀 Features <a name = "features"></a>
+
+- Implementation using React.js
+- Custom input placeholders that shift to the top when user starts typing
+- Hide and unhide password
+- Client-side validation using formik
+- Display error when invalid entries are made
+- Displays greeting on the bottom right of the screen on successful login
+
+
+## ✍️ Authors <a name = "authors"></a>
+- [@shubham](https://github.com/ShubhamBarwad) Shubham Barwad
