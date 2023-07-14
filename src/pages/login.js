@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router'
 
 function Login() {
     const [isHidden, setVisible] = useState(true)
+    const [isValid, setValid] = useState(true)
     const username = useRef(null)
     const password = useRef(null)
     const navigate = useNavigate()
@@ -41,19 +42,23 @@ function Login() {
         const formData = new FormData()
         formData.append('username', username.current.value)
         formData.append('password', password.current.value)
-
-        axios.post(LOGIN_ENDPOINT, formData,{
-            headers:{Accept:'application/json'}
-        }).then((response) => {
-            console.log(response)
-            if(response.data !== ""){
-                console.log('redirect to home')
-                navigate("/home")
-            }else{
-                formik.errors.email = "Wrong username"
-                formik.errors.password = "Wrong password"
-            }
-        })
+        
+        // For testing Webflow
+        if(username.current.value === "test@test.com" && password.current.value === "test12345"){
+            navigate("/home")
+        }else{
+            axios.post(LOGIN_ENDPOINT, formData,{
+                headers:{Accept:'application/json'}
+            }).then((response) => {
+                console.log(response)
+                if(response.data !== ""){
+                    // console.log('redirect to home')
+                    navigate("/home")
+                }else{
+                    setValid(false)
+                }
+            })
+        }
     }
 
   return (
@@ -72,7 +77,8 @@ function Login() {
                 required
                 onChange={formik.handleChange}
                 {...formik.getFieldProps('email')}/>
-                {formik.errors.email ? <p className='input-error-text'>{formik.errors.email}</p>:<></>}
+                {!isValid ? <p className='input-error-text'>Email doesn't exist</p> : <></>}
+                {formik.errors.email && isValid ? <p className='input-error-text'>{formik.errors.email}</p>:<></>}
             </div>
             
             <div className='placeholder' data-placeholder='Password' >
